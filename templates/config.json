@@ -1,0 +1,23 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri":"mysql://root:@localhost/code king",
+        "prod_uri":"mysql://root:@localhost/code king",
+        "fb_url":"https://facebook.com/codeking",
+        "tw_url":"https://twitter.com/codeking",
+        "gh_url":"https://github.com/codeking",
+        "gmail-user":"your_email_id@gmail.com",
+        "gmail-password":"**password**",
+        "blog_name": "Code King",
+
+        "tag_line": "Heaven for programmers",
+        "about_text":"Hi , I am Batman. \nThis is blog will give information related to  coding and learning new things related to coding and programming. \n Send me your doubts through contact me page",
+        "no_of_post": 3,
+        "admin_id":"user_id",
+        "admin_password":"**password**",
+        "upload_location":"static"
+
+
+    }
+}
