@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('/static/assets/img/developer.png')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Panel</h1>
+                            <span class="subheading">Manage your posts </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h2>ADD NEW POST</h2>
+                    <div > 
+                        <a href="/edit/0"><button type="button" class="btn btn-primary">New Posts</button></a>
+                        <a href="/logout"><button type="button" class="btn btn-primary">Logout</button></a>
+                      
+                    </div>
+                    <h2>Upload a file</h2>
+                        <form action="/uploader" enctype="multipart/form-data" method='post'>
+                        <input type="file" name="file1">
+                        <button type="submit">Submit</button>
+                    </form>
+                    
+                    <h2>EDIT POSTS</h2>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">SR.NO</th>
+                            <th scope="col">TITLE</th>
+                            <th scope="col">DATE</th>
+                            <th scope="col">EDIT</th>
+                            <th scope="col">DELETE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for post in posts %}
+                            <tr>
+                                <th>{{post.srno}}</th>
+                                <td>{{post.title}}</td>
+                                <td>{{post.date}}</td>
+                                <td><a href="/edit/{{post.srno}}"><button class="btn btn-link" style="color:blue;"><u>Edit</u></button></a></td>
+                                <td><a href="/delete/{{post.srno}}"><button class="btn btn-link" style="color:blue;" ><u>Delete</u></button></a></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                      </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
